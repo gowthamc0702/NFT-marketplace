@@ -71,6 +71,9 @@ const NavBar = () => {
       setOpenSideMenu(false);
 
     }
+    else{
+      setProfile(false);
+    }
   }
 
   const openSideBar = () => {
@@ -123,7 +126,7 @@ const NavBar = () => {
           </div>
 
           {/* NOTIFICATION CENTER */}
-          <div className={Style.navbar_container_right_notification}>
+          <div className={Style.navbar_container_right_notify}>
             <MdNotifications className={Style.notify} onClick={() => openNotification()} />
 
             {notification && <Notification />}
@@ -131,7 +134,7 @@ const NavBar = () => {
 
           {/* CREATE BUTTON */}
           <div className={Style.navbar_container_right_button}>
-            <Button btnText="Create" />
+            <Button btnName="Create" handleClick={()=>{}} />
           </div>
 
           {/* USER PROFILE */}
@@ -164,7 +167,7 @@ const NavBar = () => {
 
       {/* SIDEBAR COMPONENT */}
       {openSideMenu && (
-        <div className={Style.SideBar}>
+        <div className={Style.sideBar}>
           <SideBar setOpenSideMenu={setOpenSideMenu} />
         </div>
       )}
